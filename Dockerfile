@@ -10,6 +10,6 @@ RUN apk add --no-cache tini && \
     addgroup -g ${GUID} hass && \
     adduser -D -G hass -s /bin/sh -u ${UID} hass
 
-ENTRYPOINT ["/sbin/tini"]
+ENTRYPOINT ["/sbin/tini", "--"]
 
 CMD [ "/app/run.sh" ]
